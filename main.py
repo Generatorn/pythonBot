@@ -8,7 +8,7 @@ logging.basicConfig(filename="bot.log", level=logging.INFO)
 
 loop = asyncio.get_event_loop()
 
-bot = Bot(token=telegramconfig.bot_token, parse_mode="HTML")
+bot = Bot(token=config.bot_token, parse_mode="HTML")
 dp = Dispatcher(bot, loop=loop)
 
 

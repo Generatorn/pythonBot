@@ -1,7 +1,7 @@
-from telegrambot import bot, dp
+from main import bot, dp
 
 from aiogram.types import Message
-from telegramconfig import admin_id
+from config import admin_id
 
 
 async def send_to_admin(dp):
