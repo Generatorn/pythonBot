@@ -1,5 +1,5 @@
 import asyncio
-import telegramconfig
+import config
 import logging
 from aiogram import Bot, Dispatcher, executor, types
 import requests
