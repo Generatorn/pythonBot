@@ -10,6 +10,10 @@ import config
 def randId():
     with psycopg2.connect(dbname=config.dbname, user=config.user, password=config.password, host='127.0.0.1') as conn:
         with conn.cursor() as cursor:
-            req = sql.SQL('SELECT cfid FROM tasks WHERE rank < 1000 ORDER BY random() LIMIT 1')
+            req = sql.SQL('SELECT cfid FROM tasks WHERE rank < 1200 and rank > 1000 ORDER BY random() LIMIT 1')
             cursor.execute(req)
-            return cursor.fetchone()[0]
+            otv = cursor.fetchone()[0]
+            num = otv[:-1]
+            let = otv[-1]
+            adr = f"https://codeforces.com/problemset/problem/{num}/{let}"
+            return adr
